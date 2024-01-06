@@ -51,12 +51,15 @@ POST http://localhost:8000/api/login
 ### 3. POST ```/api/upload```
 Uploads a file to the server. Only permitted to ops users.
 
+
 Enter the following field in your request **form** : 
 | Key | Type | Value |
 | --- | --- | --- |
 | username | Text | Username of the user who is uploading the file |
 | file_name | Text | Name of the file |
 | file | File | The file to be uploaded |
+
+*Use username 'nikhil' for uploading files*
 
 Request syntax : 
 ```
