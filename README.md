@@ -51,6 +51,7 @@ POST http://localhost:8000/api/login
 ### 3. POST ```/api/upload```
 Uploads a file to the server. Only permitted to ops users.
 
+**Only pptx, xlsx, txt and docx files can be uploaded**
 
 Enter the following field in your request **form** : 
 | Key | Type | Value |
