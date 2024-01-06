@@ -1,0 +1,84 @@
+strivers dp playlist
+
+13. ninjas chocolates -> run a recursive call for both the friends : 
+					f(n , i, j1, j2){
+						
+
+					//taking the max value			
+						int max = 1e9
+						
+					int value = 0;					
+					for(dj1 = -1,  dj1 <= 1; dj1++){
+						for(dj2 = -1; dj2 <= 1; dj2++){
+	
+							if(j1 == j2) value += grid[i][j1]
+							else value+= grid[i][j1] + grid[i][j2]
+							
+							//calling for the rest of the values
+							value += f(grid, i, j1 + dj1, j2 + dj2)}}
+				
+					        max = Math.max(max, value)
+						}} 
+					return max
+
+14.subset sum target -> take and nottake strat
+				
+				f(n) {
+					if(idx == 0){					
+						if(sum == 0) return true
+						else if(sum != arr[0]) return false
+						else if(sum == arr[0]) return true
+					}
+
+
+					take = f(n - 1, sum - arr[idx])
+					nottake = f(n - 1, sum)
+					
+					return take || nottake}
+15. partition into subarrays with equal sum -> if number of elements are odd, return false
+										else, the question is same as finding subset sum target, here the target 											will be sum / 2.
+
+16.partition into sets with minimum difference -> perform subset sum target with target as the total sum of the array. 
+										iterate over the last row of dp -> it tells all the possibilities whether a subset with target sum exists or not (0 <= target <= totalsum). if a target subset exists, then the sum of the rest of the elements will be totalsum - target. therefore, s1 = target and s2 = totalsum - target
+iterate over all the true values and find the min (totalsum - 2 * target)
+
+17. subset sum with given difference -> calculate subset sum with target = (totalsum - difference)/2
+
+						there are two assumptions with this -> totalsum - diff is even
+ 						and totalsum > diff
+
+18. 0/1 knapsack -> take and nottake strat. we cannot apply greedy over here because there is no uniformity here.
+
+				f(index, weight) -> tells us that what is the max amount of value we can get till this index with the current weight as the limit.
+
+22. ways to make coin change -> take nottake strat: 
+							
+							f(index, target) -> tells us that till index, how many ways can we form the target
+							in these type of problems, we always use return 1 if we reach the target and 0 if the target is not met. 
+
+
+23. longest common subsequence -> match / non-match strat :
+							
+
+							f(index) ->  gives us the value of how many matches have been made 
+							
+							f(index one, index two, string one, string two) {
+								if(one == 0 || two == 0) return 0	
+									
+								//if the character matches, then we simply check for the rest of the characters in 									the remaining string
+
+								if(one.charat(one) == two.charaat(two)) return  1 + f(one -1 , two - 1)
+									
+								//if the characters dont match, then we check if the first character matches the 										previous character of the other string and vice versa 
+							ex : ac and ex -> we want to check whether x matches with e and also whether e matches 
+								c
+								
+								return max(f(one - 1, two), f(one, two - 1))
+
+						for printing the lcs, take the dp matrix and start from the lower right cell. take the
+						take the row and columns as the indexes and see if they match, if they do, add them to a stack and move to i - 1, j - 1. if they dont, see which whether (i - 1, j) or (i, j- 1) has max value. move to whoever has the greater value.
+
+
+24. longest palindromic subsequence -> reverse the string and check for its lcs in the original string
+29. minimum insertions to make string palindromic -> min insertions = length of string - length of longest palindromic 											subsequence
+30. minimum operations to convert string a to b -> min operations = (length of string one - lcs) + (length of string two 											- lcs)
