@@ -100,7 +100,7 @@ git clone https://github.com/nikhilvashisht/Ez_assignment.git
 
 2. Install the dependencies 
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 3. Run the server
 ```
