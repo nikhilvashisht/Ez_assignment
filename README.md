@@ -67,7 +67,7 @@ Request syntax :
 POST http://localhost:8000/api/upload
 ```
 
-### 4. POST ```/api/get```
+### 4. GET ```/api/get```
 List all uploaded files on the server.
 
 Request syntax : 
@@ -85,7 +85,7 @@ Response :
 }
 ```
 
-### 5. POST ```/api/download/{file_name}```
+### 5. GET ```/api/download/{file_name}```
 Download the file with file_name ```{file_name}```.
 
 Request syntax :
